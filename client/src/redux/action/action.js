@@ -15,14 +15,14 @@ import {
   ADD_FAV,
   REMOVE_FAV,
   ORDER_BY_NAME_FAV,
-  CREATE_USER
+  CREATE_USER,
 } from "./typeAction";
 
 export const getCars = () => {
   return async function (dispatch) {
     try {
       const response = await axios.get(
-        `http://localhost:3001/product/getProduct`
+        `https://vmbv-m.onrender.com/product/getProduct`
       );
       const cars = response.data;
 
@@ -37,7 +37,7 @@ export const getDetail = (idCar) => {
   return async function (dispatch) {
     try {
       const response = await axios.get(
-        `http://localhost:3001/product/${idCar}`
+        `https://vmbv-m.onrender.com/product/${idCar}`
       );
 
       const detail = response.data;
@@ -52,7 +52,7 @@ export const getDetail = (idCar) => {
 export const onSearch = (name) => {
   return async (dispatch) => {
     const response = await axios.get(
-      `http://localhost:3001/product/?name=${name}`
+      `https://vmbv-m.onrender.com/product/?name=${name}`
     );
     const onSearch = response.data;
     return dispatch({
@@ -85,9 +85,9 @@ export const OrderByPrice = (payload) => {
 export const getCategorys = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`http://localhost:3001/category`);
+      const response = await axios.get(`https://vmbv-m.onrender.com/category`);
       const category = response.data;
-      console.log("category",category);
+      console.log("category", category);
       return dispatch({ type: GET_CATEGORYS, payload: category });
     } catch (error) {
       console.log(error.message);
@@ -98,7 +98,7 @@ export const getCategorys = () => {
 export const getBrands = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get("http://localhost:3001/brand");
+      const response = await axios.get("https://vmbv-m.onrender.com/brand");
       const brands = response.data;
       console.log(" Marcas:", brands);
       return dispatch({ type: GET_BRANDS, payload: brands });
@@ -111,7 +111,7 @@ export const getBrands = () => {
 export const postProduct = (createProduct) => {
   return async function (dispatch) {
     const response = await axios.post(
-      `http://localhost:3001/create/product`,
+      `https://vmbv-m.onrender.com/create/product`,
       createProduct
     );
     return dispatch({ type: POST_PRODUCT });
@@ -132,18 +132,18 @@ export const filterCategory = (payload) => {
   };
 };
 
-export const addFav=(car)=>{
+export const addFav = (car) => {
   return {
-      type:ADD_FAV,
-      payload: car
-  }
+    type: ADD_FAV,
+    payload: car,
+  };
 };
 
-export const removeFav=(id)=>{
+export const removeFav = (id) => {
   return {
-      type:REMOVE_FAV,
-      payload:id
-  }
+    type: REMOVE_FAV,
+    payload: id,
+  };
 };
 
 // export const addReview= (createReview)=>{
@@ -175,25 +175,28 @@ export const removeFav=(id)=>{
 //   return {type:REMOVE_USER_DETAIL};
 // }
 
-export const postUser=(createUser)=>{
-  return async function(dispatch){
+export const postUser = (createUser) => {
+  return async function (dispatch) {
     try {
-      const response= await axios.post("http://localhost:3001/users/user", createUser)
-      const user= response.data;
+      const response = await axios.post(
+        "https://vmbv-m.onrender.com/users/user",
+        createUser
+      );
+      const user = response.data;
       console.log("usuario:", user);
-      return dispatch({type:CREATE_USER, payload: user})
+      return dispatch({ type: CREATE_USER, payload: user });
     } catch (error) {
       console.error(error);
     }
-  }
-}
+  };
+};
 
 // export const login=()=>{
 //   return async function(dispatch){
 //     try {
-      
+
 //     } catch (error) {
-      
+
 //     }
 //   }
 // }

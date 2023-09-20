@@ -56,7 +56,10 @@ const FormUser = () => {
           };
           // dispatch(postUser)
           axios
-            .post("http://localhost:3001/users/user", formDataWithLocation)
+            .post(
+              "https://vmbv-m.onrender.com/users/user",
+              formDataWithLocation
+            )
             .then((response) => {
               user = response.data;
               console.log("Usuario registrado con éxito:", user);
@@ -130,7 +133,7 @@ const FormUser = () => {
 
         try {
           const serverResponse = await axios.post(
-            "http://localhost:3001/users/user/google",
+            "https://vmbv-m.onrender.com/users/user/google",
             formDataForServer
           );
           console.log(
@@ -140,7 +143,7 @@ const FormUser = () => {
           const fullName = `${givenName} ${familyName}`;
           alert(`¡Bienvenido, ${fullName}! 🚘`);
           localStorage.setItem("fullName", fullName);
-          window.location.href = "./Home";
+          navigate("/Home");
         } catch (error) {
           console.error(
             "Error al enviar los datos del formulario google:",

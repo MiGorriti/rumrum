@@ -43,7 +43,7 @@ const Detail = () => {
   const createPreference = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/mp/createpreference",
+        "https://vmbv-m.onrender.com/mp/createpreference",
         {
           id,
           title: name,
@@ -136,7 +136,7 @@ const Detail = () => {
       // dispatch(addReview(newReview));
 
       axios
-        .post("http://localhost:3001/create/review", newReview)
+        .post("https://vmbv-m.onrender.com/create/review", newReview)
         .then((response) => {
           // Si la respuesta es exitosa
           alert("Review añadida");
