@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "../FormLogin/FormLogin.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const FormLogin = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -47,9 +49,9 @@ const FormLogin = () => {
         localStorage.setItem("role", role);
 
         if (role === "admin") {
-          window.location.href = "/admin";
+          navigate("/admin");
         } else if (role === "usuario") {
-          window.location.href = "/Home";
+          navigate("/Home");
         }
       } else {
         // Credenciales incorrectas o usuario baneado

@@ -5,9 +5,11 @@ import styles from "./Form.module.css";
 import { validateField } from "./validationUser";
 import { GoogleLogin } from "react-google-login";
 import { gapi } from "gapi-script";
+import { useNavigate } from "react-router-dom";
 
 const FormUser = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const clientID =
     "235598000858-au8tkevevdd8slqjhag6gl9td3lljcp5.apps.googleusercontent.com";
 
@@ -60,7 +62,7 @@ const FormUser = () => {
               console.log("Usuario registrado con éxito:", user);
               localStorage.setItem("fullName", formData.fullName);
               alert("Usuario creado con éxito");
-              window.location.href = "/Home";
+              navigate("/Home");
               setFormData({
                 fullName: "",
                 email: "",

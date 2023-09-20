@@ -55,11 +55,12 @@ const About = () => {
       },
     },
     {
-      name: "Programador 7",
-      image: "URL_IMAGEN_7",
+      name: "Mateo Chavez",
+      image:
+        "https://media.licdn.com/dms/image/C4D03AQG7kMcMV1-yoA/profile-displayphoto-shrink_400_400/0/1664221763415?e=1700697600&v=beta&t=gxjgoL87eE3hqsX3Rc7TEXKkgKeGagkD7kYMqhvgyzI",
       socialMedia: {
-        github: "LINK_GITHUB_7",
-        linkedin: "LINK_LINKEDIN_7",
+        github: "https://github.com/Mateoch14",
+        linkedin: "https://www.linkedin.com/in/mateo-chavez/",
       },
     },
   ];
