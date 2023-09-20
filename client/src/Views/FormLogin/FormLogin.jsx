@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../FormLogin/FormLogin.css";
-
+import { Link } from "react-router-dom";
 const FormLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -9,17 +9,16 @@ const FormLogin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!username || !password || !role) {
       setError("Por favor, completa todos los campos.");
       return;
     }
 
-
     try {
       let endpoint = "";
       let requestBody = {};
-  
+
       if (role === "admin") {
         endpoint = "http://localhost:3001/users/admin";
         requestBody = { username, password };
@@ -30,7 +29,7 @@ const FormLogin = () => {
         setError("Rol no válido");
         return;
       }
-  
+
       const response = await fetch(endpoint, {
         method: "POST",
         headers: {
@@ -38,9 +37,9 @@ const FormLogin = () => {
         },
         body: JSON.stringify(requestBody),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
         // Inicio de sesión exitoso
         alert(data.message);
@@ -48,11 +47,10 @@ const FormLogin = () => {
         localStorage.setItem("role", role);
 
         if (role === "admin") {
-          window.location.href = "/admin";
+          window.location.href = "./admin";
         } else if (role === "usuario") {
-          window.location.href = "/Home";
+          window.location.href = "./Home";
         }
-
       } else {
         // Credenciales incorrectas o usuario baneado
         alert(data.message);
@@ -60,7 +58,7 @@ const FormLogin = () => {
     } catch (error) {
       console.error("Error al enviar las credenciales:", error);
     }
-  }
+  };
 
   return (
     <div className="formulinocat">
@@ -104,9 +102,9 @@ const FormLogin = () => {
           </button>
           <h3 className="jajanotienecuenta">
             No tenes cuenta?
-            <a className="hacetecuenta" href="/registro">
+            <Link className="hacetecuenta" to="/registro">
               Registrate
-            </a>
+            </Link>
           </h3>
 
           {error && <div style={{ color: "red" }}>{error}</div>}
