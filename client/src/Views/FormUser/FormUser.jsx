@@ -138,7 +138,7 @@ const FormUser = () => {
           const fullName = `${givenName} ${familyName}`;
           alert(`¡Bienvenido, ${fullName}! 🚘`);
           localStorage.setItem("fullName", fullName);
-          window.location.to = "./Home";
+          window.location.href = "./Home";
         } catch (error) {
           console.error(
             "Error al enviar los datos del formulario google:",

@@ -15,7 +15,7 @@ import FormLogin from "./Views/FormLogin/FormLogin";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="test">
         <Navbar />
         <main className="background">
@@ -34,7 +34,7 @@ function App() {
 
         <Footer />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
