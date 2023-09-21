@@ -51,7 +51,7 @@ const FormLogin = () => {
         if (role === "admin") {
           navigate("/admin");
         } else if (role === "usuario") {
-          navigate("/Home");
+          navigate("/home");
         }
       } else {
         // Credenciales incorrectas o usuario baneado

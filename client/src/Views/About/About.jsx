@@ -88,7 +88,7 @@ const About = () => {
           </div>
         ))}
       </div>
-      <Link to="/Home" className="Boton">
+      <Link to="/home" className="Boton">
         Home
       </Link>
     </div>

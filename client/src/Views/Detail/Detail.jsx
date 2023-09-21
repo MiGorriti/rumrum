@@ -7,7 +7,6 @@ import { initMercadoPago } from "@mercadopago/sdk-react";
 import axios from "axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Importa los estilos del carrusel
 import { Carousel } from "react-responsive-carousel"; // Importa el componente del carrusel
-// import MiContexto from "../contexto";
 
 const Detail = () => {
   const { idCar } = useParams();
@@ -195,7 +194,7 @@ const Detail = () => {
               </button>
             </div>
             <div className="btnOut">
-              <NavLink to="/Home">
+              <NavLink to="/home">
                 <button>X</button>
               </NavLink>
             </div>

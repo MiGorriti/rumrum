@@ -1,8 +1,8 @@
 {
   "rewrites": [
-    { "source": "^/Home", "destination": "/index.html" },
+    { "source": "^/home", "destination": "/index.html" },
     { "source": "^/Form", "destination": "/index.html" },
-    { "source": "^/Detail/:idCar", "destination": "/index.html" },
+    { "source": "^/detail/:idCar", "destination": "/index.html" },
     { "source": "^/About", "destination": "/index.html" },
     { "source": "^/registro", "destination": "/index.html" },
     { "source": "^/Favorites", "destination": "/index.html" },

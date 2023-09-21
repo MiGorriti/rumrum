@@ -21,9 +21,9 @@ function App() {
         <main className="background">
           <Routes>
             <Route exact path="/" element={<LandingPage />}></Route>
-            <Route exact path="/Home" element={<Home />}></Route>
+            <Route exact path="/home" element={<Home />}></Route>
             <Route exact path="/Form" element={<Form />}></Route>
-            <Route exact path="/Detail/:idCar" element={<Detail />}></Route>
+            <Route exact path="/detail/:idCar" element={<Detail />}></Route>
             <Route exact path="/About" element={<About />}></Route>
             <Route exact path="/registro" element={<FormUser />}></Route>
             <Route exact path="/Favorites" element={<Favorites />}></Route>

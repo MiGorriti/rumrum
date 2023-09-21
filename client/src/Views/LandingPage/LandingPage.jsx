@@ -73,7 +73,7 @@ export default function LandingPage() {
           </div>
         ))}
       </div>
-      <Link to="/Home" className={styles.homeButton}>
+      <Link to="/home" className={styles.homeButton}>
         Catalogo
       </Link>
     </div>

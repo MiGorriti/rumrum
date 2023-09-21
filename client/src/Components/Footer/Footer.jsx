@@ -7,7 +7,7 @@ function Footer() {
       <div className="logo">IGNITE MOTORS</div>
       <nav className="footer-nav">
         <Link to="/About">Acerca de</Link>
-        <Link to="/Home">Inicio</Link>
+        <Link to="/home">Inicio</Link>
         {/* <Link to="/Ayuda">Ayuda</Link>
         <Link to="/"> </Link> */}
       </nav>

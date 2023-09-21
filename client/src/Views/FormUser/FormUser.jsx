@@ -65,7 +65,7 @@ const FormUser = () => {
               console.log("Usuario registrado con éxito:", user);
               localStorage.setItem("fullName", formData.fullName);
               alert("Usuario creado con éxito");
-              navigate("/Home");
+              navigate("/home");
               setFormData({
                 fullName: "",
                 email: "",
@@ -143,7 +143,7 @@ const FormUser = () => {
           const fullName = `${givenName} ${familyName}`;
           alert(`¡Bienvenido, ${fullName}! 🚘`);
           localStorage.setItem("fullName", fullName);
-          navigate("/Home");
+          navigate("/home");
         } catch (error) {
           console.error(
             "Error al enviar los datos del formulario google:",
