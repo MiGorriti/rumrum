@@ -99,7 +99,7 @@ export default function Home() {
       </div>
       <div className={styles.page}>
         <Page
-          cardsPerPage={8}
+          cardsPerPage={9}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage} // Pasa setCurrentPage como prop
           totalCars={cars.length}
