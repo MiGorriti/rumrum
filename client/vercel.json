@@ -1,13 +1,13 @@
 {
-  "routes": [
-    { "src": "/Home", "dest": "/Home" },
-    { "src": "/Form", "dest": "/Form" },
-    { "src": "/Detail/:idCar", "dest": "/Detail/:idCar" },
-    { "src": "/About", "dest": "/About" },
-    { "src": "/registro", "dest": "/registro" },
-    { "src": "/Favorites", "dest": "/Favorites" },
-    { "src": "/Admin", "dest": "/Admin" },
-    { "src": "/login", "dest": "/login" },
-    { "src": "/[^.]+", "dest": "/", "status": 200 }
+  "rewrites": [
+    { "source": "^/Home", "destination": "/index.html" },
+    { "source": "^/Form", "destination": "/index.html" },
+    { "source": "^/Detail/:idCar", "destination": "/index.html" },
+    { "source": "^/About", "destination": "/index.html" },
+    { "source": "^/registro", "destination": "/index.html" },
+    { "source": "^/Favorites", "destination": "/index.html" },
+    { "source": "^/Admin", "destination": "/index.html" },
+    { "source": "^/login", "destination": "/index.html" },
+    { "source": "^/(.*/)?$", "destination": "/index.html" }
   ]
 }
